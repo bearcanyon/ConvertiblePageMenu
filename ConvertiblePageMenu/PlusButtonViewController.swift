@@ -32,10 +32,12 @@ class PlusButtonViewController: UIViewController {
         let ud = NSUserDefaults.standardUserDefaults()
         if (ud.objectForKey("viewControllers") != nil) {
             let count = ud.objectForKey("viewControllers") as! Int
-            ud.setInteger(count - 1, forKey: "viewControllers")
-            ud.synchronize()
-            homecontroller?.loadView()
-            homecontroller?.viewDidLoad()
+            if count > 1 {
+                ud.setInteger(count - 1, forKey: "viewControllers")
+                ud.synchronize()
+                homecontroller?.loadView()
+                homecontroller?.viewDidLoad()
+            }
         }
     }
 }
