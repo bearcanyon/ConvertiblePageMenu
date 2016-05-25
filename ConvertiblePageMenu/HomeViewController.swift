@@ -32,22 +32,8 @@ class HomeViewController: UIViewController {
             ud.synchronize()
         }
         
-        switch count! {
-        case 1:
-            print("1")
+        for _ in 0 ..< count! {
             addFirstViewController()
-        case 2:
-            print("2")
-            addFirstViewController()
-            addSecondViewController()
-        case 3:
-            print("3")
-            addFirstViewController()
-            addSecondViewController()
-            addThirdViewController()
-        default:
-            print("もっと増やしたいならViewCoontrollerファイルとXibファイル用意しておく")
-            break
         }
         addPlusButtonViewController()
         pageMenuModel.setPageMenu(self)
@@ -55,25 +41,11 @@ class HomeViewController: UIViewController {
     
     func addFirstViewController(){
         let firstViewController = FirstViewController(nibName: "FirstViewController", bundle: nil)
-        firstViewController.title = "First"
+        firstViewController.title = "title"
         firstViewController.view.frame = self.view.frame
         pageMenuModel.addController(firstViewController)
     }
-    
-    func addSecondViewController() {
-        let secondViewController = SecondViewController(nibName: "SecondViewController", bundle: nil)
-        secondViewController.title = "Second"
-        secondViewController.view.frame = self.view.frame
-        pageMenuModel.addController(secondViewController)
-    }
-    
-    func addThirdViewController() {
-        let thirdViewController = ThirdViewController(nibName: "ThirdViewController", bundle: nil)
-        thirdViewController.title = "Third"
-        thirdViewController.view.frame = self.view.frame
-        pageMenuModel.addController(thirdViewController)
-    }
-    
+
     func addPlusButtonViewController() {
         let plusButtonViewController = PlusButtonViewController(nibName: "PlusButtonViewController", bundle: nil)
         plusButtonViewController.title = "＋"
