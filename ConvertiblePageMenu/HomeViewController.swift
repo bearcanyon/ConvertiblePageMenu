@@ -33,17 +33,17 @@ class HomeViewController: UIViewController {
         }
         
         for _ in 0 ..< count! {
-            addFirstViewController()
+            addViewController()
         }
         addPlusButtonViewController()
         pageMenuModel.setPageMenu(self)
     }
     
-    func addFirstViewController(){
-        let firstViewController = FirstViewController(nibName: "FirstViewController", bundle: nil)
-        firstViewController.title = "title"
-        firstViewController.view.frame = self.view.frame
-        pageMenuModel.addController(firstViewController)
+    func addViewController(){
+        let viewController = FirstViewController(nibName: "FirstViewController", bundle: nil)
+        viewController.title = "title"
+        viewController.view.frame = self.view.frame
+        pageMenuModel.addController(viewController)
     }
 
     func addPlusButtonViewController() {
